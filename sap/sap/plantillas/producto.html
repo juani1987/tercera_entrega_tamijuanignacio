@@ -1,0 +1,18 @@
+<!{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Buscar Productos</h2>
+    <form method="GET">
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if productos %}
+        <h3>Resultados:</h3>
+        <ul>
+            {% for producto in productos %}
+                <li>{{ producto.nombre }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
